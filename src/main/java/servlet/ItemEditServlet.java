@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.ItemEditDAO;
+import model.dao.ItemDAO;
 import model.dao.MakerDAO;
 import model.entity.MakerBean;
 
@@ -68,7 +68,7 @@ public class ItemEditServlet extends HttpServlet {
 	    String makerCode = request.getParameter("makerCode");
 	    int price = Integer.parseInt(request.getParameter("price"));
 	    
-	    ItemEditDAO dao = new ItemEditDAO();
+	    ItemDAO dao = new ItemDAO();
 	    
 	    try {
 	    	dao.editItem(itemName, makerCode, price);

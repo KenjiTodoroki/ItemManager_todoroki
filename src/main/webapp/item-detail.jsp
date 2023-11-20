@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList"%>
 <%
-ArrayList<String[]> list = (ArrayList<String[]>) request.getAttribute("data");
+//リクエストスコープからインスタンスを取得する
+ItemBean item = (ItemBean) request.getAttribute("item");
 %>
 <!DOCTYPE html>
 <html>
@@ -29,16 +29,13 @@ ArrayList<String[]> list = (ArrayList<String[]>) request.getAttribute("data");
 					</tr>
 				</thead>
 				<tbody>
-					<%
-					for (String[] data : list) {
-					%>
 					<tr>
-						<td><%=data[0]%></td>
-						<td><%=data[1]%></td>
-						<td><%=data[2]%></td>
-						<td><%=data[3]%></td>
-						<td><%=data[4]%></td>
-						<td><%=data[5]%></td>
+						<td><%=item.getItemId%></td>
+						<td><%=item.getItemName%></td>
+						<td><%=item.getMakerCode%></td>
+						<td><%=item.getPrice%></td>
+						<td><%=item.getInsertDatetime%></td>
+						<td><%=item.getUpdateDatetime%></td>
 						<td>
 							<%-- <c:url let="item-edit" value="/ItemEditServlet">
 								<c:param name="id" value="<% String.valueOf(data.itemId()) %>"></c:param>
@@ -55,9 +52,6 @@ ArrayList<String[]> list = (ArrayList<String[]>) request.getAttribute("data");
 							</form>
 						</td>
 					</tr>
-					<%
-					}
-					%>
 				</tbody>
 			</table>
 		</main>
