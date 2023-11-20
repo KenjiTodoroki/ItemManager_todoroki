@@ -1,6 +1,7 @@
 package model.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class ItemBean implements Serializable {
 	/**
@@ -22,11 +23,11 @@ public class ItemBean implements Serializable {
 	/**
 	 * 登録日
 	 */
-	private int insertDatetime;
+	private Date insertDatetime;
 	/**
 	 * 更新日
 	 */
-	private int updateDatetime;
+	private Date updateDatetime;
 	/**
 	 * デフォルトコンストラクタ
 	 */
@@ -93,7 +94,7 @@ public class ItemBean implements Serializable {
 	/**
 	 * @return insertDatetime
 	 */
-	public int getInsertDatetime() {
+	public Date getInsertDatetime() {
 		return insertDatetime;
 	}
 	
@@ -101,21 +102,21 @@ public class ItemBean implements Serializable {
 	/**
 	 * @param insertDatetime
 	 */
-	public void setInsertDatetime(int insertDatetime) {
+	public void setInsertDatetime(Date insertDatetime) {
 		this.insertDatetime = insertDatetime;
 	}
 	
 	/**
 	 * @return updateDatetime
 	 */
-	public int getUpdateDatetime() {
+	public Date getUpdateDatetime() {
 		return updateDatetime;
 	}
 	
 	/**
 	 * @param updateDatetime
 	 */
-	public void setUpdateDatetime(int updateDatetime) {
+	public void setUpdateDatetime(Date updateDatetime) {
 		this.updateDatetime = updateDatetime;
 	}
 }
